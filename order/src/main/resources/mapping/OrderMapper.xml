@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.zyx.order.mapper.OrderMapper">
+
+    <resultMap id="orderMap" type="com.zyx.order.entity.Order">
+    </resultMap>
+
+    <select id="getList" resultMap="orderMap">
+      SELECT u.* FROM order u
+    </select>
+
+    <insert id="add" parameterType="com.zyx.order.entity.Order">
+        insert into tb_order (id, name) values
+        (
+            #{id},
+            #{name}
+        );
+    </insert>
+</mapper>
